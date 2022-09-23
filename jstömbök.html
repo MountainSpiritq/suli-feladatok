@@ -4,9 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>tömbök</title>
 </head>
 <body>
-    
+    <h1>asd</h1>
+
+    <ul>
+        valami
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        let szamok=[12,577,69,421,13,1,3]
+        //hossza 
+        console.log(`tömb hossza ${szamok.length}`)
+        console.log(`a tömb legelso eleme ${szamok[0]}`)
+        console.log(`a tömb utolso indexe   ${szamok[szamok.length-1]}`)
+
+        for(let i=0;i<szamok.length;i++){
+            console.log(`Index ${i}, index alatti szám ${szamok[i]}`)
+        }
+
+        //for in
+        for(let i in szamok){
+            console.log(szamok[i])
+        }
+
+        //for-of
+
+        for(let item of szamok){
+            console.log(`for of ${item}`)
+        }
+
+        //ul belső olvasás
+
+        let ulObj=document.querySelector('ul')//ez egy objectum a domebol
+        console.log(ulObj.innerHTML)//tartalma
+        //felül akarjuk írni
+        let liStr=""
+        for(let item of szamok){
+            liStr+=`<li>${item}</li>`
+        }
+        ulObj.innerHTML=liStr
+
+        let olObj=document.querySelector('ol')
+
+        let nevek=["peti","mine","spárta","jocó","pisti"]
+        let li2Str=""
+        for(let item of nevek){
+            li2Str+=`<li>${item}</li>`
+        }
+        olObj.innerHTML=li2Str
+
+        //adjunk hozzá a tömbhöz elemet
+        
+
+        szamok.push("4200")
+
+        for(let i in szamok){
+            console.log(szamok[i])
+        }
+        //spread operator
+
+        szamok=[...szamok,1256]
+
+        for(let i in szamok){
+            console.log(szamok[i])
+        }
+        let szamok2=[1,2,6,4,5,]
+        szamok=[...szamok,szamok2]
+
+        for(let i in szamok){
+            console.log(szamok[i])
+        }
+    </script>
 </body>
 </html>
